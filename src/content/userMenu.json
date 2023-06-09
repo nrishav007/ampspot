@@ -1,0 +1,19 @@
+[
+  { "slug": "/user-dashboard", "linkName": "Home", "iconImage": "home.png" },
+  {
+    "slug": "/my-dj-bookings",
+    "linkName": "My Dj Bookings",
+    "iconImage": "dj_booking.png",
+    "children": {
+      "slug": "/transactions",
+      "linkName": "Transactions",
+      "iconImage": "home.png"
+    }
+  },
+  { "slug": "/promos", "linkName": "Promos", "iconImage": "promo.png" },
+  {
+    "slug": "/nearby-djs",
+    "linkName": "Nearby Djs (Map)",
+    "iconImage": "location.png"
+  }
+]

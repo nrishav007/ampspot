@@ -1,0 +1,28 @@
+[
+  { "slug": "/dj-dashboard", "linkName": "Home", "iconImage": "home.png" },
+  {
+    "slug": "/notification",
+    "linkName": "Notifications",
+    "iconImage": "bell.png"
+  },
+  {
+    "slug": "/booking-request",
+    "linkName": "Booking Requests",
+    "iconImage": "profile.png",
+    "children": {
+      "slug": "/dj-transactions",
+      "linkName": "Transactions",
+      "iconImage": "home.png"
+    }
+  },
+  {
+    "slug": "/dj-week",
+    "linkName": "Be the Dj of the Week",
+    "iconImage": "crown.png"
+  },
+  {
+    "slug": "/reviews-ratings",
+    "linkName": "Reviews/Ratings",
+    "iconImage": "review.png"
+  }
+]

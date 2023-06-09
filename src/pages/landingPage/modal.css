@@ -1,0 +1,37 @@
+
+.modal{
+    background-color: #fff,
+    width: 400px,
+    max-width: 100%,
+    padding: 30px 50px,
+    border-radius: 5px,
+    text-align: center,
+    display: flex,
+    flex-direction: column,
+    gap: 30px,
+
+}
+body{
+    display: flex,
+    justify-content: center,
+    align-items: center,
+    min-height: 100vh,
+    margin: 0,
+}
+.modal-container.show{
+    opacity: 1,
+    pointer-events: auto,
+}
+button{
+    width: 90px,
+    display: block,
+    margin: auto,
+    padding: 5px 0px,
+}
+input,select{
+    padding: 10px 0px,
+    text-indent: 10px,
+}
+#card{
+    cursor: pointer,
+}

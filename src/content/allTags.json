@@ -1,0 +1,14 @@
+[
+  { "id": "da98f043-1c0b-46d9-bed5-d3daa17921b7", "sp1": "Afrobeats" },
+  { "id": "13682d47-cbb3-45c6-99f4-a8cb0dd0775f", "sp2": "Rocks" },
+  { "id": "38abe915-7c22-480f-9c5d-34422cfa3039", "sp3": "Electronics" },
+  { "id": "f53b8f2f-bde3-4494-adb4-e6b36e98018f", "sp4": "Hiphop" },
+  { "id": "5f70ce7a-2f47-40e5-b05b-aff38f4b5c37", "sp5": "Reggea" },
+  { "id": "61439190-b62e-4023-9fe0-a10ad30151b9", "sp6": "Folk music" },
+  { "id": "ff9200ff-6ac1-4eae-8dc2-f2f0e5fb3ada", "sp7": "House Music" },
+  { "id": "fbea0f9b-72e3-4ba2-b21b-37bc4ad73d6f", "sp8": "Dance Music" },
+  { "id": "31a8a189-2ce4-41ae-aed3-6549a80f6eef", "sp9": "Tecno" },
+  { "id": "5704ab59-469d-4ec0-a774-294a36c172ba", "sp10": "Disco" },
+  { "id": "573b437e-25ee-450c-83be-04943ceda616", "sp11": "Jazz" },
+  { "id": "a4f1c199-6a7a-4286-9cc7-b4fe96637f3e", "sp12": "Pop" }
+]

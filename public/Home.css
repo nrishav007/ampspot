@@ -1,0 +1,63 @@
+.number-sec:before{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    width: 14%;
+    height: auto;
+    background-image: url('./assets/images/images/right\ Vector.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.number-sec:after{
+    content:'';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:0;
+    width: 14%;
+    height: auto;
+    background-image: url('./assets/images/images/right\ Vector.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.number-sec .number-row .num-row .num-col:nth-child(2) h2:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40px;
+    margin: auto 0;
+    width: 40px;
+    height: 7px;
+    background-image: url('./assets/images/images/Arrow 3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.number-sec .number-row .num-row .num-col:nth-child(3) h2:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -40px;
+    margin: auto 0;
+    width: 40px;
+    height: 7px;
+    background-image: url('./assets/images/images/Arrow 3.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.rozay-sec:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 26%;
+    height: 452px;
+    background-image: url('./assets/images/images/image4.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
