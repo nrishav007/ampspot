@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3005";
+const BASE_URL = "https://api.ampspot.co";
 
 // current user auth api's 
 export const REGISTER_URL = `${BASE_URL}/api/user/register-user`;
