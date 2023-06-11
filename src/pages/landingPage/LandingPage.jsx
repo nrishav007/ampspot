@@ -385,11 +385,7 @@ const LandingPage = () => {
               </li>
 
               <li>
-                <a onClick={() => navigate("/register")}>Sign Up</a>
-              </li>
-
-              <li>
-                <a onClick={() => navigate("/login")}>Login</a>
+                <a onClick={() => setModalView(!modalview)}>Wait-List</a>
               </li>
             </ul>
           </div>
