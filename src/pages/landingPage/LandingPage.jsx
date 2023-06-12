@@ -127,6 +127,7 @@ const LandingPage = () => {
             gap: "30px",
           }}
         >
+          
           <div
             style={{
               display: "flex",
@@ -135,10 +136,11 @@ const LandingPage = () => {
               padding: "20px 0px",
               justifyContent: "center",
               alignItems: "center",
-              backgroundColor: "#20a6ee",
+              backgroundColor: "#0086FF",
               color: "white",
             }}
           >
+            <div style={{color:"black",width:"97%",textAlign:"right",fontWeight:"bold" , cursor:"pointer"}}onClick={() => setModalView(!modalview)}><i className="fa fa-close"></i></div>
             <div
               style={{
                 display: "flex",
@@ -146,7 +148,7 @@ const LandingPage = () => {
                 gap: "1px",
                 justifyContent: "center",
                 alignItems: "center",
-                backgroundColor: "#20a6ee",
+                backgroundColor: "#0086FF",
                 color: "white",
               }}
             >
@@ -157,18 +159,20 @@ const LandingPage = () => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  fontSize: "14px",
-                  height: "40px",
-                  padding: "3px 3px 3px 5px",
+                  fontSize: "16px",
+                  height: "auto",
+                  width:"auto",
+                  padding: "10px",
                   letterSpacing: "3px",
                   justifyContent: "center",
                   alignItems: "center",
                   backgroundColor: "black",
-                  gap: "0px",
+                  paddingTop:"5px",
+                  paddingRight:"7px"
                 }}
               >
-                <text>SP</text>
-                <text>OT</text>
+                <text border>SP</text> 
+                <text style={{ margin: "-8px" }}>OT</text>
               </div>
             </div>
             <text style={{ fontSize: "14px" }}>Join Wait List</text>
@@ -340,7 +344,7 @@ const LandingPage = () => {
                 marginBottom: "30px",
                 width: "70%",
                 fontSize: "20px",
-                backgroundColor: "#20a6ee",
+                backgroundColor: "#0086FF",
                 borderRadius: "15px",
                 padding: "10px 0px",
                 fontWeight: "bold",
@@ -351,24 +355,7 @@ const LandingPage = () => {
             >
               Join
             </button>
-            <button
-              id="submit"
-              style={{
-                border: "3px solid black",
-                marginBottom: "30px",
-                width: "70%",
-                fontSize: "20px",
-                backgroundColor: "red",
-                borderRadius: "15px",
-                padding: "10px 0px",
-                fontWeight: "bold",
-                color: "white",
-                fontFamily: "Puritan sans-serif",
-              }}
-              onClick={() => setModalView(!modalview)}
-            >
-              Close
-            </button>
+
           </div>
         </div>
       </div>
