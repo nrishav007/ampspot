@@ -13,6 +13,7 @@ const LandingPage = () => {
     firstName: "",
     lastName: "",
     email: "",
+    number:"",
     socialMediaType: "",
     socialMediaUserName: "",
   });
@@ -33,6 +34,7 @@ const LandingPage = () => {
             firstName: "",
             lastName: "",
             email: "",
+            number:"",
             socialMediaType: "",
             socialMediaUserName: "",
         })
@@ -256,6 +258,7 @@ const LandingPage = () => {
               />
             </div>
           </div>
+          <div style={{ display: "flex", gap: "50px" }}>
           <div
             style={{
               display: "flex",
@@ -271,12 +274,35 @@ const LandingPage = () => {
               onChange={(e) => handleWaitList(e)}
               style={{
                 width: "230px",
-                height: "30px",
+                height: "40px",
                 border: "2px solid black",
                 borderRadius: "10px",
                 textIndent: "10px",
               }}
             />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "10px",
+              marginLeft:"10px"
+            }}
+          >
+            <label style={{ textAlign: "left", fontSize: "14px" }}>Number</label>
+            <input
+            value={waitlist.number}
+              name="number"
+              onChange={(e) => handleWaitList(e)}
+              style={{
+                width: "230px",
+                height: "40px",
+                border: "2px solid black",
+                borderRadius: "10px",
+                textIndent: "10px",
+              }}
+            />
+          </div>
           </div>
           <div style={{ display: "flex", gap: "50px" }}>
             <div
@@ -293,7 +319,7 @@ const LandingPage = () => {
                 name="socialMediaType"
                 onChange={(e) => handleWaitList(e)}
                 style={{
-                  width: "170px",
+                  width: "230px",
                   height: "40px",
                   border: "2px solid black",
                   borderRadius: "10px",
@@ -320,7 +346,7 @@ const LandingPage = () => {
                 name="socialMediaUserName"
                 onChange={(e) => handleWaitList(e)}
                 style={{
-                  width: "220px",
+                  width: "230px",
                   height: "40px",
                   border: "2px solid black",
                   borderRadius: "10px",
