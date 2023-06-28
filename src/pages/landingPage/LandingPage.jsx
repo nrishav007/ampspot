@@ -6,14 +6,13 @@ import { POST_WAITLIST } from "../../constant/constants";
 import axios from "axios";
 const LandingPage = () => {
   const navigate = useNavigate();
-  const [info, setInfo] = useState("");
   const [modalview, setModalView] = useState(false);
   const [waitlist, setWaitList] = useState({
     userType: "",
     firstName: "",
     lastName: "",
     email: "",
-    number:"",
+    number: "",
     socialMediaType: "",
     socialMediaUserName: "",
   });
@@ -25,26 +24,47 @@ const LandingPage = () => {
   };
   const handleWaitSubmit = () => {
     try {
-      axios.post(POST_WAITLIST, waitlist).then((res) => {
-        setModalView(false);
-        setInfo(res.data.message);
-        showToast();
-        setWaitList({
-            userType: "",
-            firstName: "",
-            lastName: "",
-            email: "",
-            number:"",
-            socialMediaType: "",
-            socialMediaUserName: "",
-        })
-      });
+      const emailValidation = new RegExp("[a-z0-9]+@[a-z]+.[a-z]{2,3}");
+      if (
+        waitlist.email === "" ||
+        waitlist.firstName === "" ||
+        waitlist.lastName === "" ||
+        waitlist.number === "" ||
+        waitlist.socialMediaType === "" ||
+        waitlist.socialMediaUserName === "" ||
+        waitlist.userType === ""
+      ) {
+        showToast("Fill all fields");
+      } else {
+        if (emailValidation.test(waitlist.email) === true) {
+          if (waitlist.number.length < 10) {
+            showToast("Incorrect Number");
+          } else {
+            axios.post(POST_WAITLIST, waitlist).then((res) => {
+              setModalView(false);
+              showToast(res.data.message);
+              setWaitList({
+                userType: "",
+                firstName: "",
+                lastName: "",
+                email: "",
+                number: "",
+                socialMediaType: "",
+                socialMediaUserName: "",
+              });
+            });
+          }
+        } else {
+          showToast("Invalid E-mail");
+        }
+      }
     } catch (error) {
       console.log(error);
     }
   };
-  const showToast = () => {
+  const showToast = (text) => {
     var toast = document.getElementById("toast");
+    toast.innerText = text;
     toast.style.display = "block";
     setTimeout(function () {
       toast.style.display = "none";
@@ -94,9 +114,7 @@ const LandingPage = () => {
           borderRadius: "5px",
           zIndex: "999",
         }}
-      >
-        {info}
-      </div>
+      ></div>
       <div
         class="modal-container"
         id="modal_container"
@@ -129,7 +147,6 @@ const LandingPage = () => {
             gap: "30px",
           }}
         >
-          
           <div
             style={{
               display: "flex",
@@ -142,7 +159,18 @@ const LandingPage = () => {
               color: "white",
             }}
           >
-            <div style={{color:"black",width:"97%",textAlign:"right",fontWeight:"bold" , cursor:"pointer"}}onClick={() => setModalView(!modalview)}><i className="fa fa-close"></i></div>
+            <div
+              style={{
+                color: "black",
+                width: "97%",
+                textAlign: "right",
+                fontWeight: "bold",
+                cursor: "pointer",
+              }}
+              onClick={() => setModalView(!modalview)}
+            >
+              <i className="fa fa-close"></i>
+            </div>
             <div
               style={{
                 display: "flex",
@@ -163,17 +191,17 @@ const LandingPage = () => {
                   flexDirection: "column",
                   fontSize: "16px",
                   height: "auto",
-                  width:"auto",
+                  width: "auto",
                   padding: "10px",
                   letterSpacing: "3px",
                   justifyContent: "center",
                   alignItems: "center",
                   backgroundColor: "black",
-                  paddingTop:"5px",
-                  paddingRight:"7px"
+                  paddingTop: "5px",
+                  paddingRight: "7px",
                 }}
               >
-                <text border>SP</text> 
+                <text border>SP</text>
                 <text style={{ margin: "-8px" }}>OT</text>
               </div>
             </div>
@@ -223,7 +251,7 @@ const LandingPage = () => {
             >
               <label style={{ textAlign: "left" }}>First Name</label>
               <input
-              value={waitlist.firstName}
+                value={waitlist.firstName}
                 name="firstName"
                 onChange={(e) => handleWaitList(e)}
                 style={{
@@ -245,7 +273,7 @@ const LandingPage = () => {
             >
               <label style={{ textAlign: "left" }}>Last Name</label>
               <input
-              value={waitlist.lastName}
+                value={waitlist.lastName}
                 name="lastName"
                 onChange={(e) => handleWaitList(e)}
                 style={{
@@ -259,50 +287,57 @@ const LandingPage = () => {
             </div>
           </div>
           <div style={{ display: "flex", gap: "50px" }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              marginLeft: "20px",
-            }}
-          >
-            <label style={{ textAlign: "left", fontSize: "14px" }}>Email</label>
-            <input
-            value={waitlist.email}
-              name="email"
-              onChange={(e) => handleWaitList(e)}
+            <div
               style={{
-                width: "230px",
-                height: "40px",
-                border: "2px solid black",
-                borderRadius: "10px",
-                textIndent: "10px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                marginLeft: "20px",
               }}
-            />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              marginLeft:"10px"
-            }}
-          >
-            <label style={{ textAlign: "left", fontSize: "14px" }}>Number</label>
-            <input
-            value={waitlist.number}
-              name="number"
-              onChange={(e) => handleWaitList(e)}
+            >
+              <label style={{ textAlign: "left", fontSize: "14px" }}>
+                Email
+              </label>
+              <input
+                type="email"
+                value={waitlist.email}
+                name="email"
+                onChange={(e) => handleWaitList(e)}
+                style={{
+                  width: "230px",
+                  height: "40px",
+                  border: "2px solid black",
+                  borderRadius: "10px",
+                  textIndent: "10px",
+                }}
+              />
+            </div>
+            <div
               style={{
-                width: "230px",
-                height: "40px",
-                border: "2px solid black",
-                borderRadius: "10px",
-                textIndent: "10px",
+                display: "flex",
+                flexDirection: "column",
+                gap: "10px",
+                marginLeft: "10px",
               }}
-            />
-          </div>
+            >
+              <label style={{ textAlign: "left", fontSize: "14px" }}>
+                Number
+              </label>
+              <input
+                type="tel"
+                maxLength="10"
+                value={waitlist.number}
+                name="number"
+                onChange={(e) => handleWaitList(e)}
+                style={{
+                  width: "230px",
+                  height: "40px",
+                  border: "2px solid black",
+                  borderRadius: "10px",
+                  textIndent: "10px",
+                }}
+              />
+            </div>
           </div>
           <div style={{ display: "flex", gap: "50px" }}>
             <div
@@ -315,7 +350,7 @@ const LandingPage = () => {
             >
               <label style={{ textAlign: "left" }}>Social Media Type</label>
               <select
-              value={waitlist.socialMediaType}
+                value={waitlist.socialMediaType}
                 name="socialMediaType"
                 onChange={(e) => handleWaitList(e)}
                 style={{
@@ -342,7 +377,7 @@ const LandingPage = () => {
             >
               <label style={{ textAlign: "left" }}>Social Media Username</label>
               <input
-              value={waitlist.socialMediaUserName}
+                value={waitlist.socialMediaUserName}
                 name="socialMediaUserName"
                 onChange={(e) => handleWaitList(e)}
                 style={{
@@ -381,7 +416,6 @@ const LandingPage = () => {
             >
               Join
             </button>
-
           </div>
         </div>
       </div>
